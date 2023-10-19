@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+    /* Define styles for screens with a maximum width of 768px (typical for mobile devices) */
+    /* For example, you can change the layout, font size, or other properties */
+    .container {
+        max-width: 100%;
+    }
+    .text {
+        font-size: 2rem;
+    }
+}

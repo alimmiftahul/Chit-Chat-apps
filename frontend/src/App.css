@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700;800&family=Work+Sans:wght@300&display=swap');
+
+.app {
+    min-height: 100vh;
+    display: flex;
+}
