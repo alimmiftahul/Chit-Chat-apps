@@ -5,13 +5,13 @@ import DarkButton from './components/DarkButton';
 
 function App() {
     return (
-        <Router>
+        <div>
             <DarkButton />
             <Routes>
                 <Route exact path="/" element={<HomePage />} />
                 <Route path="/chats" element={<ChatPage />} />
             </Routes>
-        </Router>
+        </div>
     );
 }
 

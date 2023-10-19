@@ -60,7 +60,7 @@ const Login = () => {
             );
             console.log(data);
             toast({
-                title: 'Registration Successful',
+                title: 'Login Succesfull',
                 status: 'success',
                 duration: 5000,
                 isClosable: true,

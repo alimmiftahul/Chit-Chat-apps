@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     Container,
     Box,
@@ -12,11 +12,19 @@ import {
 } from '@chakra-ui/react';
 import SignUp from '../components/Authentication/SignUp';
 import Login from '../components/Authentication/Login';
+import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
     const { colorMode } = useColorMode();
     const bgColor = colorMode === 'dark' ? 'white' : 'mirage.900';
     const textColor = colorMode === 'dark' ? 'black' : 'white';
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('userInfo'));
+        if (user) navigate('/chats');
+    }, [navigate]);
 
     return (
         <Container maxW={'xl'} centerContent alignItems="flex-center">

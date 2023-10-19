@@ -18,7 +18,7 @@ app.use(express.json()); // to accept json data
 app.use(
   cors({
     allowedHeaders: ['Content-Type'],
-    origin: 'http://localhost:5174',
+    origin: 'http://localhost:5173' || 'http://localhost:5173',
     methods: ['POST', 'GET', 'PATCH', 'DELETE', 'PUT'],
   })
 );
