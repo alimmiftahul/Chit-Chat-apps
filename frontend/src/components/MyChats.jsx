@@ -3,8 +3,8 @@ import { Box, Stack, Text } from '@chakra-ui/layout';
 import { useToast } from '@chakra-ui/toast';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { getSender } from '../config/ChatLogics';
-import ChatLoading from './ChatLoading';
+import { getSender } from '../config/Chatlogics';
+import ChatLoading from './ChatItem/ChatLoading';
 import GroupChatModal from './GroupChatModal';
 import { Button, useColorMode } from '@chakra-ui/react';
 import { ChatState } from '../Context/ChatProvider';
@@ -20,6 +20,7 @@ const MyChats = ({ fetchAgain }) => {
     const toast = useToast();
 
     const fetchChats = async () => {
+        console.log('selected');
         // console.log(user._id);
         try {
             const config = {
@@ -31,6 +32,7 @@ const MyChats = ({ fetchAgain }) => {
             const { data } = await axios.get('/api/chat', config);
             setChats(data);
         } catch (error) {
+            console.log('unselected');
             toast({
                 title: 'Error Occured!',
                 description: 'Failed to Load the chats',
@@ -57,7 +59,7 @@ const MyChats = ({ fetchAgain }) => {
             bg={bgColor}
             textColor={textColor}
             height={{ base: '100%' }}
-            width={{ base: '100%', md: '51%' }}
+            width={{ base: '100%', md: '41%' }}
             borderRadius="lg"
             borderWidth="1px"
         >
@@ -97,9 +99,13 @@ const MyChats = ({ fetchAgain }) => {
                     <Stack overflowY="scroll">
                         {chats.map((chat) => (
                             <Box
-                                onClick={() => setSelectedChat(chat)}
+                                onClick={() => {
+                                    selectedChat === chat
+                                        ? setSelectedChat(null)
+                                        : setSelectedChat(chat);
+                                }}
                                 cursor="pointer"
-                                bg={selectedChat === chat ? '#38B2AC' : 'white'}
+                                bg={selectedChat === chat ? 'mirage.600' : 'white'}
                                 color={selectedChat === chat ? 'white' : 'black'}
                                 px={3}
                                 py={2}

@@ -15,12 +15,12 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const SignUp = () => {
     const [name, setName] = useState('');
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confPassword, setConfPassword] = useState('');
     const { colorMode } = useColorMode();
     const [show, setShow] = useState(false);
+    const [showConfPassword, setShowConfPassword] = useState(false);
     const [pic, setPic] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -32,6 +32,7 @@ const SignUp = () => {
     const iconColor = colorMode === 'dark' ? 'mirage.900' : 'white';
 
     const handleClick = () => setShow(!show);
+    const handleClickShowPassword = () => setShowConfPassword(!showConfPassword);
 
     const postDetails = (pics) => {
         setLoading(true);
@@ -202,7 +203,7 @@ const SignUp = () => {
                 <FormLabel>Confirm Password</FormLabel>
                 <InputGroup>
                     <Input
-                        type={show ? 'text' : 'password'} // Toggle input type
+                        type={showConfPassword ? 'text' : 'password'} // Toggle input type
                         placeholder="Enter your Password"
                         value={confPassword}
                         onChange={(e) => setConfPassword(e.target.value)}
@@ -213,10 +214,10 @@ const SignUp = () => {
                         <Button
                             bgColor={borderColor}
                             _hover={{ bgColor: borderColor }}
-                            onClick={handleClick}
+                            onClick={handleClickShowPassword}
                             size={'sm'}
                         >
-                            {show ? (
+                            {showConfPassword ? (
                                 <ViewIcon color={iconColor} />
                             ) : (
                                 <ViewOffIcon color={iconColor} />

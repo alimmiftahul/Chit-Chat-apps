@@ -1,7 +1,11 @@
 import { CloseIcon } from '@chakra-ui/icons';
 import { Badge } from '@chakra-ui/layout';
+import { useColorMode } from '@chakra-ui/react';
 
 const UserBadgeItem = ({ user, handleFunction, admin }) => {
+    const { colorMode } = useColorMode();
+    const bgColor = colorMode === 'dark' ? 'mirage.400' : 'slate.200';
+    const textColor = colorMode === 'dark' ? 'white' : 'black';
     return (
         <Badge
             px={2}
@@ -11,7 +15,8 @@ const UserBadgeItem = ({ user, handleFunction, admin }) => {
             mb={2}
             variant="solid"
             fontSize={12}
-            colorScheme="purple"
+            bgColor={bgColor}
+            textColor={textColor}
             cursor="pointer"
             onClick={handleFunction}
         >

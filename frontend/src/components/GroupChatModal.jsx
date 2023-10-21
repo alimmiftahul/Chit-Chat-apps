@@ -16,12 +16,12 @@ import {
 import axios from 'axios';
 import { useState } from 'react';
 import { ChatState } from '../Context/ChatProvider';
-import UserBadgeItem from './UserBadgeItem';
-import UserListItem from './UserListItem';
+import UserBadgeItem from './User/UserBadgeItem';
+import UserListItem from './User/UserListItem';
 
 const GroupChatModal = ({ children }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const [groupChatName, setGroupChatName] = useState();
+    const [groupChatName, setGroupChatName] = useState('');
     const [selectedUsers, setSelectedUsers] = useState([]);
     const [search, setSearch] = useState('');
     const [searchResult, setSearchResult] = useState([]);

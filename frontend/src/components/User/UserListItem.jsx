@@ -1,16 +1,21 @@
 import { Avatar } from '@chakra-ui/avatar';
 import { Box, Text } from '@chakra-ui/layout';
-import { ChatState } from '../Context/ChatProvider';
-import { Spinner } from '@chakra-ui/spinner';
+import { ChatState } from '../../Context/ChatProvider';
+import { useColorMode } from '@chakra-ui/react';
+import { useState } from 'react';
 
 const UserListItem = ({ user, handleFunction }) => {
+    const { colorMode } = useColorMode();
+    const bgColor = colorMode === 'dark' ? 'slate.200' : 'gray.100';
+    const textColor = colorMode === 'dark' ? 'white' : 'black';
+
     return (
         <Box
             onClick={handleFunction}
             cursor="pointer"
-            bg="#E8E8E8"
+            bg={bgColor}
             _hover={{
-                background: '#38B2AC',
+                background: 'mirage.600',
                 color: 'white',
             }}
             w="100%"

@@ -21,8 +21,8 @@ import {
     DrawerHeader,
     DrawerOverlay,
 } from '@chakra-ui/modal';
-import ProfileModal from './ProfileModal';
-import ChatLoading from './ChatLoading';
+import ProfileModal from './User/ProfileModal';
+import ChatLoading from './ChatItem/ChatLoading';
 import { BellIcon, ChevronDownIcon } from '@chakra-ui/icons';
 import React, { useState } from 'react';
 import { useDisclosure } from '@chakra-ui/hooks';
@@ -30,7 +30,7 @@ import NotificationBadge from 'react-notification-badge';
 import { Effect } from 'react-notification-badge';
 import { ChatState } from '../Context/ChatProvider';
 import { useNavigate } from 'react-router-dom';
-import UserListItem from './UserListItem';
+import UserListItem from './User/UserListItem';
 import axios from 'axios';
 
 import { Spinner } from '@chakra-ui/spinner';
@@ -187,7 +187,12 @@ const SideDrawer = () => {
                     </MenuList>
                 </Menu>
                 <Menu>
-                    <MenuButton as={Button} bg="white" rightIcon={<ChevronDownIcon />}>
+                    <MenuButton
+                        as={Button}
+                        bg="white"
+                        textColor={'gray.900'}
+                        rightIcon={<ChevronDownIcon />}
+                    >
                         <Avatar
                             size="sm"
                             cursor="pointer"
