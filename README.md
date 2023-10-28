@@ -1,6 +1,17 @@
 # Chit-Chat-App
 
 Welcome to the Chit-Chat-App, a chat web application that leverages the power of Socket.io for real-time notifications and updates, this project also provide dark mode with chakra-ui as ui-framework.
+# Feature backend and frontend
+1. chakra-ui (responsive, darkmode)
+2. mongodb
+3. express
+4. react
+5. toastify
+6. axios
+7. react-notifiaction-badge
+8. react-scrollable-feed
+9. socket.io
+10. framer-motion
 
 # Prerequisites
 
