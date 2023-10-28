@@ -75,6 +75,8 @@ yarn
 yarn run dev #or npm run dev
 ```
 
-Sample ![Sample](samples/ss.gif)
+# Sample
+
+![Sample](samples/ss.gif)
 
 Now, you're all set to embark on your Chit-Chat journey, connecting with others in real-time. Enjoy the experience of Chit-Chat! 🚀
