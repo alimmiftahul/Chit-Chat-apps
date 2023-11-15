@@ -4,7 +4,11 @@
   "description": "backend for realtime chat website project",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "NODE_ENV=production node server.js",
+    "start:dev": "NODE_ENV=development nodemon server.js",
+    "build": "npm run build:frontend && npm run build:server",
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "build:server": "cd server && npm install && npm run build"
   },
   "keywords": [],
   "author": "miftahul alim",
